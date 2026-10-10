@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex, nofollow">
+<title>Deals · Nebula Fox Studio</title>
+<meta name="description" content="Nebula Fox Studio: a daily spark, my designs, and my deals. Works offline.">
+<meta name="theme-color" content="#070a1f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Nebula Fox">
+<meta name="format-detection" content="telephone=no">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="stylesheet" href="css/deals.css">
+<link rel="stylesheet" href="css/shell.css">
+</head>
+<body>
+<div id="nfs-glow" class="nfs-glow" aria-hidden="true"></div>
+<script src="js/shell.js"></script>
+
+
+<header class="app-header">
+  <div class="wrap bar">
+    <div class="brand">
+      <button type="button" class="wand-btn glow-0" id="wandBtn" aria-label="Open Wand Log" title="The Wand Glow">
+        <svg class="wand-svg" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <linearGradient id="wandWood" x1="0" y1="1" x2="1" y2="0">
+              <stop offset="0%" stop-color="#D4C4A0"/>
+              <stop offset="100%" stop-color="#7A6230"/>
+            </linearGradient>
+          </defs>
+          <path d="M6.8 26.8 L13.2 18.4" fill="none" stroke="url(#wandWood)" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M12.2 19.6 L20.2 9.4" fill="none" stroke="#7A6230" stroke-width="1.35" stroke-linecap="round"/>
+          <path class="wand-tip" id="wandTip" fill="#C7C7CC" transform="translate(15.2,.2) scale(.74)" d="M12 0c.6 5.8 3.2 9.4 12 12-8.8 2.6-11.4 6.2-12 12-.6-5.8-3.2-9.4-12-12C8.8 9.4 11.4 5.8 12 0z"/>
+          <path id="wandStar" fill="#FFD56A" opacity="0" d="M24.1 1.6l1.05 2.35 2.55.32-1.95 1.8.58 2.5-2.23-1.28-2.23 1.28.58-2.5-1.95-1.8 2.55-.32z"/>
+        </svg>
+        <svg class="spark-burst" viewBox="0 0 44 44" aria-hidden="true">
+          <path fill="#4B4FD8" d="M22 6c.4 3.8 2.1 6.2 8 8-5.9 1.8-7.6 4.2-8 8-.4-3.8-2.1-6.2-8-8 5.9-1.8 7.6-4.2 8-8z" opacity=".85"/>
+        </svg>
+      </button>
+      <div class="title-wrap">
+        <span class="name">Deals</span>
+        <span class="niche-chip" id="nicheChip" title="Your product line">My line: Wet palettes · Miniature painting</span>
+        <span class="tagline-mini" id="taglineMini">The wand picks the student.</span>
+      </div>
+    </div>
+    <nav class="seg" id="segNav" aria-label="Sections">
+      <button type="button" data-tab="source" class="active"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6.5l1.2 1.2L7.2 5.5M4 12.5l1.2 1.2 2-2.2M4 18.5l1.2 1.2 2-2.2"/></svg>Source</button>
+      <button type="button" data-tab="calculate"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M9 7h6M8.5 12h1.5M11.25 12h1.5M14 12h1.5M8.5 16h1.5M11.25 16h1.5M14 16h1.5"/></svg>Calculate</button>
+      <button type="button" data-tab="track"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7.25"/><circle cx="12" cy="12" r="2.25"/></svg>Track</button>
+      <button type="button" data-tab="dashboard"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/></svg>Dashboard</button>
+    </nav>
+    <div class="header-actions">
+      <button type="button" class="icon-btn" id="settingsBtn" aria-label="Settings" title="Settings"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16M8 5.2v3.6M15 10.2v3.6M10 15.2v3.6"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="example-banner" id="exampleBanner">
+    <span>Example data — not real</span>
+    <button type="button" class="btn btn-sm btn-ghost" id="clearExampleBtn">Clear example</button>
+  </div>
+  <div class="coach" id="coach"><span class="dot" aria-hidden="true"></span><div id="coachText">Start small. One wet palette deal that fits your budget.</div></div>
+
+  <!-- SOURCE -->
+  <section class="panel active" id="panel-source" data-panel="source">
+    <div class="card">
+      <p class="eyebrow">Source</p>
+      <h2>Is this deal a fit?</h2>
+      <p class="sub">Check each box before you calculate. Must-haves unlock the calculator.</p>
+      <ul class="check-list" id="checkList"></ul>
+      <div class="gate-note" id="gateNote">Check the must-haves first. Then Calculate will open clearly.</div>
+      <div class="btn-row">
+        <button type="button" class="btn btn-primary" id="toCalcBtn">Go to Calculate</button>
+        <button type="button" class="btn btn-ghost btn-sm" id="resetCheckBtn">Reset checklist</button>
+      </div>
+    </div>
+    <div class="anti">
+      <strong>What the Wand won't do</strong>
+      <ul>
+        <li>Never buys anything or connects to Amazon.</li>
+        <li>Never handles cards, banks, or money — ledger is notes only.</li>
+        <li>Never gives tax or legal advice.</li>
+        <li>Never chases trends outside miniature painting / wet palettes.</li>
+        <li>Never says “widen” until your real numbers earn it.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CALCULATE -->
+  <section class="panel" id="panel-calculate" data-panel="calculate">
+    <div class="card">
+      <p class="eyebrow">Calculate</p>
+      <h2>Will this deal pay?</h2>
+      <p class="sub">Enter the numbers. The Wand shows the math and a plain verdict.</p>
+      <div class="gate-note" id="calcGate">A must-have on Source is still unchecked. Check it first, then come back.</div>
+      <div id="calcForm">
+        <div class="field-row">
+          <div class="field"><label for="buyCost">Buy cost / unit ($)</label><input type="number" id="buyCost" min="0" step="0.01" value="" placeholder="0.00"></div>
+          <div class="field"><label for="sellPrice">Sell price ($)</label><input type="number" id="sellPrice" min="0" step="0.01" value="" placeholder="0.00"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="referral">Amazon referral fee (%)</label><input type="number" id="referral" min="0" max="100" step="0.1" value="15"><p class="hint">Usually about 15% for many categories.</p></div>
+          <div class="field"><label for="fbaFee">FBA fulfillment fee / unit ($)</label><input type="number" id="fbaFee" min="0" step="0.01" value="" placeholder="0.00"><p class="hint">Get this from Amazon’s revenue calculator.</p></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="inbound">Inbound shipping / unit ($)</label><input type="number" id="inbound" min="0" step="0.01" value="" placeholder="0.00"></div>
+          <div class="field"><label for="prep">Prep / labels / unit ($)</label><input type="number" id="prep" min="0" step="0.01" value="" placeholder="0.00"></div>
+        </div>
+        <div class="field"><label for="units">Units (test buy)</label><input type="number" id="units" min="1" step="1" value="10"></div>
+        <div class="field-row">
+          <div class="field"><label for="productName">Product name (for tracker)</label><input type="text" id="productName" placeholder="e.g. Example wet palette"></div>
+          <div class="field"><label for="supplierName">Supplier</label><input type="text" id="supplierName" placeholder="Wholesaler name"></div>
+        </div>
+        <div class="math" id="mathBox" aria-live="polite"></div>
+        <div class="verdict pass" id="verdict"><div>PASS</div><div class="why">Enter numbers to see a verdict.</div></div>
+        <div class="cap-warn" id="capWarn">This test buy is more than your capital. Try fewer units.</div>
+        <div class="btn-row">
+          <button type="button" class="btn btn-primary" id="saveDealBtn">Save as deal</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACK -->
+  <section class="panel" id="panel-track" data-panel="track">
+    <div class="card">
+      <p class="eyebrow">Track</p>
+      <h2>Your deals</h2>
+      <p class="sub">Move each one from considering to sold out. Real payouts matter most.</p>
+      <div id="dealList"></div>
+    </div>
+  </section>
+
+  <!-- DASHBOARD -->
+  <section class="panel" id="panel-dashboard" data-panel="dashboard">
+    <div class="stat-grid" id="statGrid"></div>
+    <div class="widen" id="widenBox"></div>
+    <div class="card">
+      <p class="eyebrow">Capital</p>
+      <h2>Ledger</h2>
+      <p class="sub">Record-keeping only. The Wand never touches cards or banks.</p>
+      <div id="ledgerList"></div>
+      <div class="btn-row">
+        <button type="button" class="btn btn-primary btn-sm" id="addFundsBtn"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Add funds</button>
+      </div>
+    </div>
+    <div class="card">
+      <p class="eyebrow">Helpers</p>
+      <h2>Examples &amp; data</h2>
+      <p class="sub">Start empty of deals. Load clearly labeled sample numbers for practice.</p>
+      <div class="btn-row">
+        <button type="button" class="btn btn-ghost btn-sm" id="loadExampleBtn">Load example</button>
+        <button type="button" class="btn btn-ghost btn-sm" id="clearExampleBtn2">Clear example</button>
+        <button type="button" class="btn btn-danger btn-sm" id="resetAllBtn">Reset all data</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<!-- Settings sheet -->
+<div class="overlay" id="settingsOverlay" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+  <div class="sheet">
+    <button type="button" class="sheet-close" data-close="settingsOverlay" aria-label="Close"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></button>
+    <h2 id="settingsTitle">Settings</h2>
+    <p class="sub">Your budget, verdict thresholds and your product line.</p>
+    <div class="field"><label for="budgetAmt">Starting budget ($)</label><input type="number" id="budgetAmt" min="1" step="1" inputmode="decimal"><p class="hint">Starts at $300. Change it any time; it stays on this phone.</p></div>
+    <div class="field"><label for="nicheLine">My line (chip text)</label><input type="text" id="nicheLine"></div>
+    <div class="field-row">
+      <div class="field"><label for="goRoi">GO min ROI (%)</label><input type="number" id="goRoi" min="0" step="1"></div>
+      <div class="field"><label for="goNet">GO min net ($/unit)</label><input type="number" id="goNet" min="0" step="0.01"></div>
+    </div>
+    <div class="field-row">
+      <div class="field"><label for="thinkRoi">THINK min ROI (%)</label><input type="number" id="thinkRoi" min="0" step="1"></div>
+      <div class="field"><label for="thinkNet">THINK min net ($/unit)</label><input type="number" id="thinkNet" min="0" step="0.01"></div>
+    </div>
+    <div class="field">
+      <label><input type="checkbox" id="lumosToggle" class="inline-check"> Lumos — show Wand Glow</label>
+      <p class="hint">Nox hides the glow. Profit still counts in the log.</p>
+    </div>
+    <div class="btn-row"><button type="button" class="btn btn-primary" id="saveSettingsBtn">Save</button></div>
+  </div>
+</div>
+
+<!-- Wand log -->
+<div class="overlay" id="wandOverlay" role="dialog" aria-modal="true" aria-labelledby="wandTitle">
+  <div class="sheet">
+    <button type="button" class="sheet-close" data-close="wandOverlay" aria-label="Close"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></button>
+    <h2 id="wandTitle">Wand Log</h2>
+    <p class="sub">The tip glows only from real profit you’ve been paid — never from the seed or plans.</p>
+    <div id="wandLog"></div>
+  </div>
+</div>
+
+<!-- Add funds -->
+<div class="overlay" id="fundsOverlay" role="dialog" aria-modal="true" aria-labelledby="fundsTitle">
+  <div class="sheet">
+    <button type="button" class="sheet-close" data-close="fundsOverlay" aria-label="Close"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></button>
+    <h2 id="fundsTitle">Add funds</h2>
+    <p class="sub">This just records money you’ve put in. The Wand never touches cards or banks.</p>
+    <div class="field"><label for="fundAmt">Amount ($)</label><input type="number" id="fundAmt" min="0.01" step="0.01" placeholder="0.00"></div>
+    <div class="field"><label for="fundNote">Source note</label><input type="text" id="fundNote" placeholder="Birthday, From Dad, …"></div>
+    <div class="field"><label for="fundDate">Date</label><input type="date" id="fundDate"></div>
+    <div class="btn-row"><button type="button" class="btn btn-primary" id="saveFundsBtn">Add to ledger</button></div>
+  </div>
+</div>
+
+<!-- Edit deal -->
+<div class="overlay" id="dealOverlay" role="dialog" aria-modal="true" aria-labelledby="dealTitle">
+  <div class="sheet">
+    <button type="button" class="sheet-close" data-close="dealOverlay" aria-label="Close"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></button>
+    <h2 id="dealTitle">Edit deal</h2>
+    <p class="sub">Update stage and what you actually got paid.</p>
+    <input type="hidden" id="editId">
+    <div class="field"><label for="editProduct">Product</label><input type="text" id="editProduct"></div>
+    <div class="field"><label for="editSupplier">Supplier</label><input type="text" id="editSupplier"></div>
+    <div class="field"><label for="editStage">Stage</label>
+      <select id="editStage">
+        <option value="considering">Considering</option>
+        <option value="ordered">Ordered</option>
+        <option value="at_amazon">At Amazon</option>
+        <option value="live">Live</option>
+        <option value="sold_out">Sold out</option>
+      </select>
+    </div>
+    <div class="field-row">
+      <div class="field"><label for="editUnits">Units</label><input type="number" id="editUnits" min="1" step="1"></div>
+      <div class="field"><label for="editUnitsSold">Units sold</label><input type="number" id="editUnitsSold" min="0" step="1"></div>
+    </div>
+    <div class="field-row">
+      <div class="field"><label for="editBuy">Buy cost / unit</label><input type="number" id="editBuy" min="0" step="0.01"></div>
+      <div class="field"><label for="editSell">Sell price</label><input type="number" id="editSell" min="0" step="0.01"></div>
+    </div>
+    <div class="field-row">
+      <div class="field"><label for="editInbound">Inbound / unit</label><input type="number" id="editInbound" min="0" step="0.01"></div>
+      <div class="field"><label for="editPrep">Prep / unit</label><input type="number" id="editPrep" min="0" step="0.01"></div>
+    </div>
+    <div class="field-row">
+      <div class="field"><label for="editReferral">Referral %</label><input type="number" id="editReferral" min="0" step="0.1"></div>
+      <div class="field"><label for="editFba">FBA fee / unit</label><input type="number" id="editFba" min="0" step="0.01"></div>
+    </div>
+    <div class="field"><label for="editPayout">Actual payout received ($)</label><input type="number" id="editPayout" min="0" step="0.01"><p class="hint">What Amazon paid you for sold units. This lights the Wand.</p></div>
+    <div class="field"><label for="editOrderedAt">Ordered date</label><input type="date" id="editOrderedAt"></div>
+    <div class="field"><label for="editSoldAt">Sold-out date</label><input type="date" id="editSoldAt"></div>
+    <div class="btn-row">
+      <button type="button" class="btn btn-primary" id="saveEditBtn">Save</button>
+      <button type="button" class="btn btn-danger" id="deleteDealBtn">Delete</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<nav class="nfs-tabs" aria-label="Nebula Fox Studio">
+  <a href="./"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c.5 4.6 2.4 7.3 8.5 9.5-6.1 2.2-8 4.9-8.5 9.5-.5-4.6-2.4-7.3-8.5-9.5 6.1-2.2 8-4.9 8.5-9.5z"/></svg>Spark</a>
+  <a href="studio.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.2 0 1.8-.8 1.8-1.7 0-1.3-1.1-1.6-1.1-2.7 0-1 .8-1.6 1.9-1.6H17a4 4 0 0 0 4-4C21 6.5 17 3 12 3z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7" r="1.2"/><circle cx="15" cy="7.2" r="1.2"/></svg>Studio</a>
+  <a href="deals.html" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12.2V4.5a1 1 0 0 1 1-1h7.7l8.3 8.3a1.4 1.4 0 0 1 0 2l-6.7 6.7a1.4 1.4 0 0 1-2 0z"/><circle cx="8" cy="8" r="1.6"/></svg>Deals</a>
+</nav>
+<script src="js/deals.js"></script>
+</body>
+</html>
