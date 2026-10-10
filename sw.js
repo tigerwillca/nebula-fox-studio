@@ -1,6 +1,6 @@
 // Nebula Fox Studio: offline cache. Only touches caches named "nfs-*".
 // Bump CACHE whenever any file changes so installed phones update.
-var CACHE = "nfs-v1";
+var CACHE = "nfs-v2";
 var FILES = [
   "./",
   "apple-touch-icon.png",

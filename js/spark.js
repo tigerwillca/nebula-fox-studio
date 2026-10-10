@@ -40,18 +40,20 @@
   if (CFG.extraLine && String(CFG.extraLine).trim()) LINES.push(String(CFG.extraLine).trim());
 
   // ---------- levels by total days opened (never punishes a missed day) ----------
+  // A level every 7 days up to 42 (6 x 7 = 42, the studio's number). Day 42 = Nebula Fox, with a soft glow that stays.
   var LEVELS = [
     { at: 1,   name: "Spark" },
-    { at: 3,   name: "Glimmer" },
-    { at: 7,   name: "Glow" },
-    { at: 14,  name: "Beam" },
-    { at: 21,  name: "Comet" },
-    { at: 30,  name: "Shooting Star" },
-    { at: 50,  name: "Constellation" },
-    { at: 75,  name: "Supernova" },
-    { at: 100, name: "Galaxy" },
-    { at: 150, name: "Wand Master" }
+    { at: 7,   name: "Glimmer" },
+    { at: 14,  name: "Glow" },
+    { at: 21,  name: "Beam" },
+    { at: 28,  name: "Comet" },
+    { at: 35,  name: "Shooting Star" },
+    { at: 42,  name: "Nebula Fox" },
+    { at: 84,  name: "Constellation" },
+    { at: 126, name: "Galaxy" },
+    { at: 168, name: "Wand Master" }
   ];
+  var FORTY_TWO = 42;
 
   var $ = function (id) { return document.getElementById(id); };
   var reduce = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : { matches: false };
@@ -116,6 +118,9 @@
     $("bar").setAttribute("aria-valuenow", pct);
     requestAnimationFrame(function () { $("fill").style.width = Math.max(4, pct) + "%"; });
     $("streak").textContent = state.streak > 1 ? "✦ " + state.streak + " days in a row" : (state.days > 1 ? "✦ welcome back" : "✦ day one");
+    // the 42 touch: a quiet gold glow on the level card from day 42 on
+    var card = document.querySelector(".level");
+    if (card) card.classList.toggle("glow42", state.days >= FORTY_TWO);
     paintCasts();
   }
   function paintCasts() {
@@ -419,6 +424,11 @@
     setTimeout(function () {
       burst(W / 2, H * 0.42, 2.2); chime(2); buzz([20, 40, 20]);
       toast("Level up! ✦ " + LEVELS[lvl].name, "level " + (lvl + 1), 3200);
+    }, 700);
+  } else if (newDay && state.streak === FORTY_TWO) {
+    setTimeout(function () {
+      burst(W / 2, H * 0.42, 2.2); chime(2); buzz([20, 40, 20]);
+      toast("42 days in a row ✦", "the fox is proud of you", 3600);
     }, 700);
   } else if (newDay && state.days >= 3 && !state.foundNote && state.days % 4 === 3) {
     // a gentle clue every few days until he finds the secret
