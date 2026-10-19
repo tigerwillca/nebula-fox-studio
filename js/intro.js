@@ -18,13 +18,13 @@
     for (var k = 0; k < N; k++) {
       var q = pts[k], r = R * open * Math.pow(q.t, 0.7), a = q.arm * 2.0944 + q.t * 4.2 + rot + q.j;
       var x = cx + Math.cos(a) * r, y = cy + Math.sin(a) * r * 0.92, c = cols[q.arm];
-      var al = fade * (0.25 + 0.55 * (1 - q.t)), rad = q.s * (2 + 4 * (1 - q.t));
+      var al = fade * (0.06 + 0.16 * Math.pow(q.t, 0.5)), rad = q.s * (1.6 + 2.4 * (1 - q.t));
       var g = ctx.createRadialGradient(x, y, 0, x, y, rad * 3);
       g.addColorStop(0, "rgba(" + c + "," + al + ")"); g.addColorStop(1, "rgba(" + c + ",0)");
       ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, rad * 3, 0, 6.2832); ctx.fill();
     }
     var core = ctx.createRadialGradient(cx, cy, 0, cx, cy, R * 0.5);
-    core.addColorStop(0, "rgba(255,240,255," + 0.35 * fade + ")"); core.addColorStop(1, "rgba(150,110,255,0)");
+    core.addColorStop(0, "rgba(200,170,255," + 0.1 * fade + ")"); core.addColorStop(1, "rgba(150,110,255,0)");
     ctx.fillStyle = core; ctx.beginPath(); ctx.arc(cx, cy, R * 0.5, 0, 6.2832); ctx.fill();
   }
   function settle() { draw(1); btn.classList.add("show"); btn.focus({ preventScroll: true }); }
