@@ -1,5 +1,5 @@
 /* Nebula Fox Studio: shared tab bar + opening glow */
-.nfs-tabs{position:fixed;z-index:50;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(3,1fr);
+.nfs-tabs{position:fixed;z-index:50;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(4,1fr);
   padding:6px 10px calc(6px + env(safe-area-inset-bottom,0px));background:rgba(9,11,32,.82);
   -webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);
   border-top:1px solid rgba(190,180,255,.16);font-family:ui-rounded,"SF Pro Rounded",-apple-system,BlinkMacSystemFont,system-ui,sans-serif}
@@ -26,3 +26,8 @@
   .nfs-glow::before{animation:none;transform:scale(.9);opacity:.8}
   .nfs-glow::after{animation:none;opacity:1}
 }
+
+/* Shop call to action on Spark */
+.shop-cta{position:fixed;z-index:20;left:50%;transform:translateX(-50%);bottom:calc(180px + env(safe-area-inset-bottom,0px));
+  padding:9px 18px;border-radius:999px;font:700 14px ui-rounded,-apple-system,system-ui,sans-serif;letter-spacing:.02em;
+  color:#1b1030;background:linear-gradient(135deg,#fff3d1,#ffd27a);text-decoration:none;box-shadow:0 0 16px rgba(255,210,122,.45);white-space:nowrap}
