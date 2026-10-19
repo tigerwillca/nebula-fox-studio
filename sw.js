@@ -1,12 +1,13 @@
 // Nebula Fox Studio: offline cache. Only touches caches named "nfs-*".
 // Bump CACHE whenever any file changes so installed phones update.
-var CACHE = "nfs-v2";
+var CACHE = "nfs-v3";
 var FILES = [
   "./",
   "apple-touch-icon.png",
   "css/deals.css",
   "css/shell.css",
   "css/spark.css",
+  "css/shop.css",
   "css/studio.css",
   "deals.html",
   "icons/favicon-32.png",
@@ -29,6 +30,7 @@ var FILES = [
   "js/spark.js",
   "js/studio.js",
   "manifest.webmanifest",
+  "shop.html",
   "studio.html"
 ];
 self.addEventListener("install", function (e) {
